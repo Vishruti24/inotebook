@@ -3,36 +3,36 @@ import noteContext from "./noteContext";
 
 const NoteState = (props) => {
   const host = "http://localhost:5000";
-  // const notesinitial = [];
-  // const [notes, setNotes] = useState(notesinitial);
- const [notes, setNotes] = useState([]);
+  const notesinitial = [];
+  const [notes, setNotes] = useState(notesinitial);
+//  const [notes, setNotes] = useState([]);
   //Get all notes
 
   const getNotes = async () => {
     //API call
-    try{
+    
     const response = await fetch(`${host}/api/notes/fetchallnotes`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
-        "auth-token":localStorage.getItem("token")
+        "auth-token":localStorage.getItem("token"),
       },
     });
     const json = await response.json();
     console.log(json);
-    //setNotes(json);
-          if (Array.isArray(json)) {
-        setNotes(json); // If backend returns a direct array
-      } else if (Array.isArray(json.notes)) {
-        setNotes(json.notes); // If backend returns { notes: [...] }
-      } else {
-        console.error("Unexpected notes response:", json);
-        setNotes([]); // fallback
-      }
-    } catch (error) {
-      console.error("Error fetching notes:", error);
-      setNotes([]); // prevent crash
-    }
+    setNotes(json);
+    //       if (Array.isArray(json)) {
+    //     setNotes(json); // If backend returns a direct array
+    //   } else if (Array.isArray(json.notes)) {
+    //     setNotes(json.notes); // If backend returns { notes: [...] }
+    //   } else {
+    //     console.error("Unexpected notes response:", json);
+    //     setNotes([]); // fallback
+    //   }
+    // } catch (error) {
+    //   console.error("Error fetching notes:", error);
+    //   setNotes([]); // prevent crash
+    // }
    };
 
   //Add note
@@ -114,6 +114,7 @@ const NoteState = (props) => {
 };
 
 export default NoteState;
+
 
 
 

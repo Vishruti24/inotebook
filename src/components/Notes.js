@@ -11,13 +11,14 @@ const Notes = () => {
 
   let navigate = useNavigate();
   useEffect(() => {
-    if (localStorage.getItem('token')) {
+    if (localStorage.getItem("token")) {
       getNotes();
     }
     else {
       navigate("/login")
     }
   }, []);
+
 
   const ref = useRef(null);
   const refClose = useRef(null);
@@ -41,7 +42,7 @@ const Notes = () => {
   const onChange = (e) => {
     setNote({ ...note, [e.target.name]: e.target.value });
   };
-  //  if (!authChecked) return null;
+ 
   return (
     <>
       <AddNote />
@@ -146,19 +147,18 @@ const Notes = () => {
       <div className="row my-3">
         <h1>Your Notes</h1>
         <div className="container mx-2">
-          {!notes || notes.length === 0 ? ' No notes to display':null}
+          {notes.length === 0 && <p>' No notes to display'</p>}
         </div>
-        {notes && notes.map((note) => {
-          return (
+        { notes.map((note) => (
             <Noteitem key={note._id} updateNote={updateNote} note={note} />
-          ); //props to items
-        })}
+           //props to items
+        ))}
+        
       </div>
     </>
   );
 };
 
 export default Notes;
-
 
 
