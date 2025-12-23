@@ -19,8 +19,10 @@ const AddNote = () => {
 
   return (
     <div>
-      <div className="container my-3">
-        <h1>Add a Note</h1>
+      <div className="card shadow border-0 mb-4">
+         <div className="card-header bg-primary text-white fw-bold">Add a New Note</div>
+          <div className="card-body">
+        {/* <h1>Add a Note</h1> */}
         {/* <form action=""></form> */}
         <form className="my-3">
           <div className="mb-3">
@@ -39,10 +41,11 @@ const AddNote = () => {
             <input  type="text"  className="form-control"  id="tag"  name="tag" value={note.tag} onChange={onChange}/>
           </div>
 
-          <button  disabled={note.title.length<5 || note.description.length<5}  type="submit" className="btn btn-primary" onClick={handleClick}>
+          <button  disabled={note.title.length<5 || note.description.length<5}  type="submit" className="btn btn-primary mt-2" onClick={handleClick}>
             Add Note
           </button>
         </form>
+      </div>
       </div>
     </div>
   );

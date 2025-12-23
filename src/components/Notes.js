@@ -66,7 +66,7 @@ const Notes = () => {
       >
         <div className="modal-dialog">
           <div className="modal-content">
-            <div className="modal-header">
+            <div className="modal-header bg-primary text-white">
               <h1 className="modal-title fs-5" id="exampleModalLabel">
                 Edit Note
               </h1>
@@ -145,7 +145,7 @@ const Notes = () => {
         </div>
       </div>
       <div className="row my-3">
-        <h1>Your Notes</h1>
+        <h1 className="text-secondary my-4">Your Notes</h1>
         <div className="container mx-2">
           {notes.length === 0 && <p>' No notes to display'</p>}
         </div>

@@ -27,7 +27,9 @@ let navigate = useNavigate();
     setCrandital({ ...crandital, [e.target.name]: e.target.value });
   }  
   return (
-    <div className='container'>
+        <div className="container my-5 p-4 shadow-lg bg-white rounded" style={{ maxWidth: '500px' }}>
+      <h2 className="text-center text-primary mb-4">Signup</h2>
+    {/* <div className='container'> */}
       <form onSubmit={handleSubmit}>
   <div className="mb-3">
     <label htmlFor="name" className="form-label">UserName</label>
@@ -46,7 +48,7 @@ let navigate = useNavigate();
     <input type="password" className="form-control" id="cpassword" name="cpassword"   onChange={onChange} minLength={5} required/>
   </div>
 
-  <button type="submit" className="btn btn-primary">Submit</button>
+  <button type="submit" className="btn btn-primary w-100 mt-2">Submit</button>
 </form>
     </div>
   )
