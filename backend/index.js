@@ -25,3 +25,11 @@ app.listen(port,()=>{
     console.log(`iNotebook backend listening at http://localhost:${port}`);
 
 })
+
+
+// app.listen(5000, "0.0.0.0", () => {
+//   console.log("Backend running on port 5000");
+// });
+// app.listen(5000, "0.0.0.0", () => {
+//   console.log("Backend running on port 5000");
+// });
