@@ -31,43 +31,4 @@ function App() {
 
 export default App;
 
-// import "./App.css";
-// import Navbar from "./components/Navbar";
-// import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
-// import NoteState from "./context/notes/NoteState";
-// import Alert from "./components/Alert";
-// import Login from "./components/Login";
-// import Signup from "./components/Signup";
-// import Notes from "./components/Notes"; // your home screen after login
 
-// function App() {
-//   const token = localStorage.getItem("token");
-
-//   return (
-//     <NoteState>
-//       <Router>
-//         <Navbar />
-//         <Alert message="Alert!" />
-//         <div className="container">
-//           <Routes>
-//             {/* Redirect "/" to "/signup" */}
-//             <Route path="/" element={<Navigate to="/signup" />} />
-
-//             <Route path="/signup" element={<Signup />} />
-//             <Route path="/login" element={<Login />} />
-
-//             {/* Protected Home Route */}
-//             <Route
-//               path="/home"
-//               element={
-//                 token ? <Notes /> : <Navigate to="/login" />
-//               }
-//             />
-//           </Routes>
-//         </div>
-//       </Router>
-//     </NoteState>
-//   );
-// }
-
-// export default App;
